@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Romantic Proposal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh; font-family:'Poppins',sans-serif;
+      background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1518190171695-bbbb69c4a901') center/cover no-repeat fixed;
+      color:#fff; display:flex; align-items:center; justify-content:center;
+    }
+    .page{
+      max-width:700px; width:94%; padding:30px; text-align:center;
+      background:rgba(255,255,255,.1); backdrop-filter:blur(12px);
+      border-radius:22px; box-shadow:0 20px 60px rgba(0,0,0,.45);
+      animation:fade 1s ease;
+    }
+    h1{font-family:'Great Vibes',cursive;font-size:46px;margin:0;color:#ffd1dc}
+    h2{font-size:28px;margin:18px 0;color:#ffe6f0}
+    p{font-size:20px;line-height:1.4}
+    .top{font-size:18px;letter-spacing:1px;margin-bottom:10px}
+    .btns{margin-top:25px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+    button{
+      padding:14px 34px;font-size:18px;border:none;border-radius:40px;cursor:pointer;
+      transition:.2s; box-shadow:0 10px 25px rgba(0,0,0,.4)
+    }
+    .yes{background:linear-gradient(45deg,#ff758c,#ff7eb3);color:#fff;animation:pulse 1.5s infinite}
+    .no{background:#fff;color:#333}
+    button:hover{transform:translateY(-2px) scale(1.04)}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,126,179,.7)}70%{box-shadow:0 0 0 20px rgba(255,126,179,0)}100%{box-shadow:0 0 0 0 rgba(255,126,179,0)}}
+    @keyframes fade{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+    .loop{animation:shake 1s infinite alternate}
+    @keyframes shake{from{transform:scale(1)}to{transform:scale(1.05)}}
+  </style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+const app=document.getElementById('app');
+
+function page(content){app.innerHTML=`<div class='page'>${content}</div>`}
+
+function home(){page(`
+  <div class='top'>A ROMANTIC PROPOSAL FROM : ALBERT JUSTIN MARANDYY</div>
+  <h1>Welcome to my World</h1>
+  <h2>Dibya Darshana, will you be Mine Forever?</h2>
+  <div class='btns'>
+    <button class='yes' onclick='trueLove()'>Yes</button>
+    <button class='no' onclick='thinkAgain1()'>No</button>
+  </div>`)}
+
+function thinkAgain1(){page(`
+  <h1>Ek baar soch lo naa phirse</h1>
+  <p>Mera pyaar sachcha hai ❤️</p>
+  <div class='btns'>
+    <button class='yes' onclick='trueLove()'>Yes</button>
+    <button class='no' onclick='thinkAgain1()'>No</button>
+  </div>`)}
+
+function trueLove(){page(`
+  <h1>I knew it</h1>
+  <p>You Truely loved me 💖</p>
+  <div class='btns'>
+    <button class='yes' onclick='marryQ()'>Proceed – My Love</button>
+  </div>`)}
+
+function marryQ(){page(`
+  <h1>Will You Marry Me?</h1>
+  <h2>Dibya Darshana 💍</h2>
+  <div class='btns'>
+    <button class='yes' onclick='finalYes()'>Yes</button>
+    <button class='no' onclick='thinkAgain2()'>No</button>
+  </div>`)}
+
+function thinkAgain2(){page(`
+  <h1 class='loop'>Please Maan Jao na meri Jaan ❤️</h1>
+  <div class='btns'>
+    <button class='yes' onclick='finalYes()'>Yes</button>
+  </div>`)}
+
+function finalYes(){page(`
+  <h1>Thanks for choosing me for Lifetime!!!</h1>
+  <p>I Lovvveeee Youuuu Sooooo Muchhhh!!!! 💖💖💖</p>`)}
+
+home();
+</script>
+</body>
+</html>
